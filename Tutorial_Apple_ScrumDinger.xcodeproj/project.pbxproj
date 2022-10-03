@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		E3E2DA6028EB60B700053698 /* Tutorial_Apple_ScrumDingerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E2DA5F28EB60B700053698 /* Tutorial_Apple_ScrumDingerApp.swift */; };
-		E3E2DA6228EB60B700053698 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E2DA6128EB60B700053698 /* ContentView.swift */; };
+		E3E2DA6228EB60B700053698 /* MeetingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E2DA6128EB60B700053698 /* MeetingView.swift */; };
 		E3E2DA6428EB60B800053698 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E3E2DA6328EB60B800053698 /* Assets.xcassets */; };
 		E3E2DA6728EB60B800053698 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E3E2DA6628EB60B800053698 /* Preview Assets.xcassets */; };
 		E3E2DA7128EB60B800053698 /* Tutorial_Apple_ScrumDingerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E2DA7028EB60B800053698 /* Tutorial_Apple_ScrumDingerTests.swift */; };
@@ -36,7 +36,7 @@
 /* Begin PBXFileReference section */
 		E3E2DA5C28EB60B700053698 /* Tutorial_Apple_ScrumDinger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tutorial_Apple_ScrumDinger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3E2DA5F28EB60B700053698 /* Tutorial_Apple_ScrumDingerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tutorial_Apple_ScrumDingerApp.swift; sourceTree = "<group>"; };
-		E3E2DA6128EB60B700053698 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		E3E2DA6128EB60B700053698 /* MeetingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetingView.swift; sourceTree = "<group>"; };
 		E3E2DA6328EB60B800053698 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E3E2DA6628EB60B800053698 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E3E2DA6C28EB60B800053698 /* Tutorial_Apple_ScrumDingerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tutorial_Apple_ScrumDingerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -95,7 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				E3E2DA5F28EB60B700053698 /* Tutorial_Apple_ScrumDingerApp.swift */,
-				E3E2DA6128EB60B700053698 /* ContentView.swift */,
+				E3E2DA6128EB60B700053698 /* MeetingView.swift */,
 				E3E2DA6328EB60B800053698 /* Assets.xcassets */,
 				E3E2DA6528EB60B800053698 /* Preview Content */,
 			);
@@ -257,7 +257,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E3E2DA6228EB60B700053698 /* ContentView.swift in Sources */,
+				E3E2DA6228EB60B700053698 /* MeetingView.swift in Sources */,
 				E3E2DA6028EB60B700053698 /* Tutorial_Apple_ScrumDingerApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
