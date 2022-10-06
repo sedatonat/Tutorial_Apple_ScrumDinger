@@ -15,6 +15,7 @@ struct MeetingView: View {
                 VStack (alignment: .leading) {
                     Text("Seconds Elapsed")
                         .font(.caption)
+                        .padding(.bottom,0) //bunu ekstra ekledim
                     Label("300", systemImage: "hourglass.bottomhalf.fill")
                 }
                 Spacer()
@@ -24,6 +25,9 @@ struct MeetingView: View {
                     Label("600", systemImage: "hourglass.tophalf.filled")
                 }
             }
+            .accessibilityElement(children: .ignore)
+            .accessibilityLabel("Time remaining")
+            .accessibilityValue("10 minutes")
             Circle()
                 .strokeBorder(lineWidth:24)
             HStack{
@@ -32,6 +36,7 @@ struct MeetingView: View {
                 Button (action: {}) {
                     Image(systemName: "forward.fill")
                 }
+            .accessibilityLabel("Next speaker")
             }
         }
         .padding()
