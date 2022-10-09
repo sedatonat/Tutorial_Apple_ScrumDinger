@@ -8,21 +8,37 @@
 import SwiftUI
 
 struct DailyScrum: Identifiable {
-    let id: UUID
-    var title: String
-    var attendees: [String]
-    var lengthInMinutes: Int
-    var theme: Theme
+    let id: UUID // AutoNumber / Primary Key gibi
+    var title: String // Elle yaziliyor
+    var attendees: [Attendee] // Bir listeden seciliyor
+    var lengthInMinutes: Int // Elle giriliyor
+    var theme: Theme // Otomatik geliyor
     
     // Buradaki "=UUID()" eklentisi olmadan, extension hata veriyor. Bunun neden eklendiğini anlayamadım.#learn
+    // Buradaki attendees neden halen String onu da anlamadim #learn
     init(id: UUID = UUID(), title: String, attendees: [String], lengthInMinutes: Int, theme: Theme) {
         self.id = id
         self.title = title
-        self.attendees = attendees
+        self.attendees = attendees.map { Attendee(name: $0) }  // Burayi hic anlamadim. #learn
         self.lengthInMinutes = lengthInMinutes
         self.theme = theme
     }
 }
+
+// Bu primary key olarak mi dusunuluyor? #learn
+extension DailyScrum {
+    struct Attendee: Identifiable {
+        let id: UUID
+        var name: String
+        
+        // BU kismi neden ekledik hic anlamadim. #learn
+        init (id: UUID = UUID(), name: String) {
+            self.id = id
+            self.name = name
+        }
+    }
+}
+
 
 extension DailyScrum {
     static let sampleData: [DailyScrum] =
