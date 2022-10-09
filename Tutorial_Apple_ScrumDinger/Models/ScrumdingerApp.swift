@@ -18,3 +18,4 @@ struct Tutorial_Apple_ScrumDingerApp: App {
         // Uygulama ilk açıldığında ekrana ilk gelmesi istenen View 'un seçildiği alan
     }
 }
+
