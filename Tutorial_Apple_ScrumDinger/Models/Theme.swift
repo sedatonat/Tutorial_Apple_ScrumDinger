@@ -1,10 +1,10 @@
 /*
-
+ 
  Burada renklere karar verdik.
  Ama aşağıdaki RawValue kısmını anlayamadım.
  
  Burada Foundation Library kullanamıyoruz çünkü onda Color yok
-
+ 
  */
 
 
@@ -39,4 +39,7 @@ enum Theme: String {
     var mainColor: Color {
         Color(rawValue)
     }
+    var name: String {
+        rawValue.capitalized
+    } // Bunun ne yaptığını anlayamadım #learn
 }
