@@ -14,7 +14,8 @@ struct DailyScrum: Identifiable {
     var lengthInMinutes: Int
     var theme: Theme
     
-    init(id: UUID, title: String, attendees: [String], lengthInMinutes: Int, theme: Theme) {
+    // Buradaki "=UUID()" eklentisi olmadan, extension hata veriyor. Bunun neden eklendiğini anlayamadım.#learn
+    init(id: UUID = UUID(), title: String, attendees: [String], lengthInMinutes: Int, theme: Theme) {
         self.id = id
         self.title = title
         self.attendees = attendees

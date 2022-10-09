@@ -11,7 +11,10 @@ import SwiftUI
 struct Tutorial_Apple_ScrumDingerApp: App {
     var body: some Scene {
         WindowGroup {
-            MeetingView()
+            //MeetingView()
+            ScrumsView(scrums: DailyScrum.sampleData)
+            //ScrumsView() Bu şekilde çalışmıyor. Yukarıdaki gibi çalılamsı gerekiyor ama yukarıdaki yazımı anlayamadım. #learn
         }
+        // Uygulama ilk açıldığında ekrana ilk gelmesi istenen View 'un seçildiği alan
     }
 }

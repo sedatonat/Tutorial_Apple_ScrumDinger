@@ -35,6 +35,7 @@ enum Theme: String {
         case .indigo, .magenta, .navy, .oxblood, .purple, .Askeri: return .white
         }
     }
+    // Bu "rawValue" nereden geliyor anlayamadım. #learn
     var mainColor: Color {
         Color(rawValue)
     }
