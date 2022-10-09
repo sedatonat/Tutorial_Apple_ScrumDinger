@@ -20,12 +20,12 @@ struct ScrumsView: View {
                 .listRowBackground(scrum.theme.mainColor)
             }
         }
-        .navigationTitle("Daily Scrums")
+        .navigationTitle("Daily Scrums") //Neden bir üst seviyeye yazamadığımı anlamadım. #learn
         .toolbar {
             Button (action:{}){
                 Image(systemName:"plus")
             }
-            .accessibilityLabel("New Scrum")
+            .accessibilityLabel("New Scrum") // Bunu nasıl test edebiliriz? #learn
         }
     }
 }
