@@ -10,10 +10,18 @@ import SwiftUI
 struct DetailEditView: View {
     @State private var data = DailyScrum.Data()
     
-    
-    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Form {
+            Section(header: Text("Meeting Info")) {
+                TextField ("Title", text: $data.title)
+                HStack {
+                    Slider(value: $data.lengthInMinutes, in: 5...30, step:1) {
+                    }
+                    Spacer()
+                    Text("\(Int(data.lengthInMinutes)) minutes")
+                }
+            }
+        }
     }
 }
 
