@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		E3128C2428EE0AAD0000AC38 /* TrailingIconLabelStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3128C2328EE0AAD0000AC38 /* TrailingIconLabelStyle.swift */; };
 		E31CED5628EF5235002A2D4F /* ScrumsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31CED5528EF5235002A2D4F /* ScrumsView.swift */; };
+		E3BBCFD028F4F5EA00E2F78B /* DetailEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BBCFCF28F4F5EA00E2F78B /* DetailEditView.swift */; };
 		E3C14D3C28ECAA84005146B8 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C14D3B28ECAA84005146B8 /* Theme.swift */; };
 		E3C14D3E28ECBBA4005146B8 /* DailyScrum.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C14D3D28ECBBA4005146B8 /* DailyScrum.swift */; };
 		E3C14D4028ED86B8005146B8 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C14D3F28ED86B8005146B8 /* CardView.swift */; };
@@ -42,6 +43,7 @@
 /* Begin PBXFileReference section */
 		E3128C2328EE0AAD0000AC38 /* TrailingIconLabelStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailingIconLabelStyle.swift; sourceTree = "<group>"; };
 		E31CED5528EF5235002A2D4F /* ScrumsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrumsView.swift; sourceTree = "<group>"; };
+		E3BBCFCF28F4F5EA00E2F78B /* DetailEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailEditView.swift; sourceTree = "<group>"; };
 		E3C14D3B28ECAA84005146B8 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		E3C14D3D28ECBBA4005146B8 /* DailyScrum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyScrum.swift; sourceTree = "<group>"; };
 		E3C14D3F28ED86B8005146B8 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
@@ -88,6 +90,7 @@
 			children = (
 				E3C14D3F28ED86B8005146B8 /* CardView.swift */,
 				E3D97AB828F332BF0079319B /* DetailView.swift */,
+				E3BBCFCF28F4F5EA00E2F78B /* DetailEditView.swift */,
 				E3E2DA6128EB60B700053698 /* MeetingView.swift */,
 				E31CED5528EF5235002A2D4F /* ScrumsView.swift */,
 			);
@@ -293,6 +296,7 @@
 			files = (
 				E3C14D3E28ECBBA4005146B8 /* DailyScrum.swift in Sources */,
 				E3D97AB928F332BF0079319B /* DetailView.swift in Sources */,
+				E3BBCFD028F4F5EA00E2F78B /* DetailEditView.swift in Sources */,
 				E3128C2428EE0AAD0000AC38 /* TrailingIconLabelStyle.swift in Sources */,
 				E3C14D3C28ECAA84005146B8 /* Theme.swift in Sources */,
 				E31CED5628EF5235002A2D4F /* ScrumsView.swift in Sources */,
