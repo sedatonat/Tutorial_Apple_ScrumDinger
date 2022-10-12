@@ -10,6 +10,8 @@ import SwiftUI
 struct DetailView: View {
     let scrum: DailyScrum
     
+    @State private var isPresentingEditView = false // Burayi anlamadim #learn
+    
     var body: some View {
         List {
             Section(header: Text("Meeting Info")) {
@@ -42,6 +44,34 @@ struct DetailView: View {
             }
         }
         .navigationTitle(scrum.title)
+        
+        // Edit menusunu ac
+        .toolbar {
+            Button("Edit") {
+                isPresentingEditView = true
+            }
+        }
+        .sheet(isPresented: $isPresentingEditView) {
+            NavigationView{
+                DetailEditView()
+                    .navigationTitle(scrum.title)
+                
+                // Edit menusunu kapa
+                    .toolbar {
+                        ToolbarItem(placement: .cancellationAction) {
+                            Button("Cancel") {
+                                isPresentingEditView = false
+                                
+                            }
+                        }
+                        ToolbarItem(placement: .confirmationAction) {
+                            Button("Done") {
+                                isPresentingEditView = false
+                            }
+                        }
+                    }
+            }
+        }
     }
 }
 

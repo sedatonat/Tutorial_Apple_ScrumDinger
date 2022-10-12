@@ -17,9 +17,12 @@ struct DetailEditView: View {
                 TextField ("Title", text: $data.title)
                 HStack {
                     Slider(value: $data.lengthInMinutes, in: 5...30, step:1) {
+                        Text("Length") // Bunun burada olmasinin ne anlami oldugunu anlamadim.
                     }
+                    .accessibilityValue("\(Int(data.lengthInMinutes)) minutes")
                     Spacer()
                     Text("\(Int(data.lengthInMinutes)) minutes")
+                        .accessibilityHidden(true) // Bu kodu anlamadim #learn
                 }
             }
             Section(header: Text("Attendees")) {
@@ -39,6 +42,7 @@ struct DetailEditView: View {
                         }
                     }) {
                         Image(systemName: "plus.circle.fill")
+                            .accessibilityLabel("Add attendees")
                     }
                     .disabled(newAttendeeName.isEmpty) // Attendee girilmemis ise pasif yap
                 }
