@@ -31,7 +31,7 @@ extension DailyScrum {
         let id: UUID
         var name: String
         
-        // BU kismi neden ekledik hic anlamadim. #learn
+        // Bu kismi neden ekledik (veya neden yukariya eklemedik) hic anlamadim. #learn
         init (id: UUID = UUID(), name: String) {
             self.id = id
             self.name = name
