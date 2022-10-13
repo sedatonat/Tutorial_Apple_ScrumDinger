@@ -10,7 +10,7 @@
 
 import SwiftUI
 
-enum Theme: String {
+enum Theme: String, CaseIterable, Identifiable { // bu yeni eklenenler nedir anlamadim #learn
     case bubblegum
     case buttercup
     case indigo
@@ -42,4 +42,8 @@ enum Theme: String {
     var name: String {
         rawValue.capitalized
     } // Bunun ne yaptığını anlayamadım #learn
+    
+    var id: String { // yukaridaki CaseItarable ve Identifiable 'i ekleyince bunu eklemem gerekiyor anladigim. halen kopugum #learn
+        name
+    }
 }
