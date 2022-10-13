@@ -31,7 +31,7 @@ struct DetailEditView: View {
                 }
                 .onDelete { indices in
                     data.attendees.remove(atOffsets: indices)
-                }
+                } // Swipe-left yapinca ilgili row siliniyor.
                 HStack{
                     TextField("New Attendee", text: $newAttendeeName) // "@State Private var" ile yukarida tanimlanmisti
                     Button(action: {
