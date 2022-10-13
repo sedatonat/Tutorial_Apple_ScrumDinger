@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct DetailEditView: View {
-    @State private var data = DailyScrum.Data()
+    @Binding var data:  DailyScrum.Data // State 'ten Binding e dondu neden? #learn
     @State private var newAttendeeName=""
     
     var body: some View {
@@ -54,6 +54,7 @@ struct DetailEditView: View {
 
 struct DetailEditView_Previews: PreviewProvider {
     static var previews: some View {
-        DetailEditView()
+        DetailEditView(data: .constant(DailyScrum.sampleData[0].data))
+        // son kisma ".data" eklemeden evvel verdigi hata: "Cannot convert value of type 'DailyScrum' to expected argument type 'DailyScrum.Data'"
     }
 }

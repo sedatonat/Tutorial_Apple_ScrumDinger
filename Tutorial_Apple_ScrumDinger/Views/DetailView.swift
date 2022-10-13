@@ -8,8 +8,9 @@
 import SwiftUI
 
 struct DetailView: View {
-    let scrum: DailyScrum
+    @Binding var scrum: DailyScrum
     
+    @State private var data = DailyScrum.Data() // Bu kismi DetailEdit ten sildik buraya yazdik. neden? #learn
     @State private var isPresentingEditView = false // Burayi anlamadim #learn
     
     var body: some View {
@@ -49,11 +50,12 @@ struct DetailView: View {
         .toolbar {
             Button("Edit") {
                 isPresentingEditView = true
+                data = scrum.data
             }
         }
         .sheet(isPresented: $isPresentingEditView) {
-            NavigationView{
-                DetailEditView()
+            NavigationView {
+                DetailEditView(data: $data)
                     .navigationTitle(scrum.title)
                 
                 // Edit menusunu kapa
@@ -64,9 +66,11 @@ struct DetailView: View {
                                 
                             }
                         }
+                        // Yapilan degisikligi onayla
                         ToolbarItem(placement: .confirmationAction) {
                             Button("Done") {
                                 isPresentingEditView = false
+                                scrum.update(from: data) // Editlenen veryi geri gonderiyor
                             }
                         }
                     }
@@ -78,7 +82,7 @@ struct DetailView: View {
 struct DetailView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            DetailView(scrum: DailyScrum.sampleData[0])
+            DetailView(scrum: .constant(DailyScrum.sampleData[0]))
         }
     }
 }

@@ -9,13 +9,15 @@ import SwiftUI
 
 @main
 struct Tutorial_Apple_ScrumDingerApp: App {
+    @State private var scrums = DailyScrum.sampleData
     var body: some Scene {
         WindowGroup {
-            //MeetingView()
-            ScrumsView(scrums: DailyScrum.sampleData)
-            //ScrumsView() Bu şekilde çalışmıyor. Yukarıdaki gibi çalılamsı gerekiyor ama yukarıdaki yazımı anlayamadım. #learn
+            NavigationView {
+                //MeetingView()
+                ScrumsView(scrums: $scrums) // "DailyScrum.sampleData" $scrums oldu neden? #learn
+                //ScrumsView() Bu şekilde çalışmıyor. Yukarıdaki gibi çalılamsı gerekiyor ama yukarıdaki yazımı anlayamadım. #learn
+            }
+            // Uygulama ilk açıldığında ekrana ilk gelmesi istenen View 'un seçildiği alan
         }
-        // Uygulama ilk açıldığında ekrana ilk gelmesi istenen View 'un seçildiği alan
     }
 }
-
