@@ -70,3 +70,5 @@ extension DailyScrum {
     ]
 
 }
+
+// Oylesine bir ekleme. Sirf bugun bos gemesin diye. Makale okuyorum, sirf bu yuzden zincir gitmesin :)
