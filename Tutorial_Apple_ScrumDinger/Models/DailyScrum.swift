@@ -49,7 +49,7 @@ extension DailyScrum {
         Data(title: title, attendees: attendees, lengthInMinutes: Double(lengthInMinutes), theme: theme)
     }
     
-    // Bu kısım sanırım DetaılVıew 'dan data 'yı alıp seknornize ediyor ama bakmak laızm #learn
+    // Bu kısım sanırım DetailView 'dan data 'yı alıp senkornize ediyor ama bakmak lazim #learn
     mutating func update(from data: Data) {
         title = data.title
         attendees = data.attendees
@@ -70,5 +70,3 @@ extension DailyScrum {
     ]
 
 }
-
-// Oylesine bir ekleme. Sirf bugun bos gemesin diye. Makale okuyorum, sirf bu yuzden zincir gitmesin :)

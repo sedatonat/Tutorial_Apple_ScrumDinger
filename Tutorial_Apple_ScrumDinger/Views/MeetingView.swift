@@ -16,24 +16,7 @@ struct MeetingView: View {
             RoundedRectangle(cornerRadius: 16)
                 .fill(scrum.theme.mainColor)
             VStack {
-                ProgressView(value:5, total:15)
-                HStack{
-                    VStack (alignment: .leading) {
-                        Text("Seconds Elapsed")
-                            .font(.caption)
-                            .padding(.bottom,0) //bunu ekstra ekledim
-                        Label("300", systemImage: "hourglass.bottomhalf.fill")
-                    }
-                    Spacer()
-                    VStack (alignment: .trailing) {
-                        Text("Seconds Remaining")
-                            .font(.caption)
-                        Label("600", systemImage: "hourglass.tophalf.filled")
-                    }
-                }
-                .accessibilityElement(children: .ignore)
-                .accessibilityLabel("Time remaining")
-                .accessibilityValue("10 minutes")
+                
                 Circle()
                     .strokeBorder(lineWidth:24)
                 HStack{
@@ -47,14 +30,16 @@ struct MeetingView: View {
             }
         }
         .padding()
+        .foregroundColor(scrum.theme.accentColor)
+        .navigationBarTitleDisplayMode(.inline) // Bu ne ise yaradi anlamadim #learn
     }
 }
 
 
 struct MeetingView_Previews: PreviewProvider {
     static var previews: some View {
-        MeetingView(scrum: .constant(DailyScrum.sampledata[0]))
-        // hata: "Type 'DailyScrum' has no member 'sampledata'"
+        MeetingView(scrum: .constant(DailyScrum.sampleData[0]))
+        // sampledata yazinca hata verdi cunku "D" kucuk yazilmisti #lessonslearned
         
     }
 }

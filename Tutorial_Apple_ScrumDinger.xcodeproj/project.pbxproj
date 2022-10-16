@@ -23,6 +23,7 @@
 		E3E2DA7128EB60B800053698 /* Tutorial_Apple_ScrumDingerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E2DA7028EB60B800053698 /* Tutorial_Apple_ScrumDingerTests.swift */; };
 		E3E2DA7B28EB60B800053698 /* Tutorial_Apple_ScrumDingerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E2DA7A28EB60B800053698 /* Tutorial_Apple_ScrumDingerUITests.swift */; };
 		E3E2DA7D28EB60B800053698 /* Tutorial_Apple_ScrumDingerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E2DA7C28EB60B800053698 /* Tutorial_Apple_ScrumDingerUITestsLaunchTests.swift */; };
+		E3F899E928FB90F40007864D /* MeetingHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F899E828FB90F40007864D /* MeetingHeaderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,7 @@
 		E3E2DA7628EB60B800053698 /* Tutorial_Apple_ScrumDingerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tutorial_Apple_ScrumDingerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3E2DA7A28EB60B800053698 /* Tutorial_Apple_ScrumDingerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tutorial_Apple_ScrumDingerUITests.swift; sourceTree = "<group>"; };
 		E3E2DA7C28EB60B800053698 /* Tutorial_Apple_ScrumDingerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tutorial_Apple_ScrumDingerUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		E3F899E828FB90F40007864D /* MeetingHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetingHeaderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				E3C14D3F28ED86B8005146B8 /* CardView.swift */,
+				E3F899E828FB90F40007864D /* MeetingHeaderView.swift */,
 				E3D97AB828F332BF0079319B /* DetailView.swift */,
 				E3BBCFCF28F4F5EA00E2F78B /* DetailEditView.swift */,
 				E3BBCFD128F79F7500E2F78B /* ThemeView.swift */,
@@ -303,6 +306,7 @@
 				E3BBCFD428F7AEC700E2F78B /* ThemePicker.swift in Sources */,
 				E3C14D3E28ECBBA4005146B8 /* DailyScrum.swift in Sources */,
 				E3D97AB928F332BF0079319B /* DetailView.swift in Sources */,
+				E3F899E928FB90F40007864D /* MeetingHeaderView.swift in Sources */,
 				E3BBCFD028F4F5EA00E2F78B /* DetailEditView.swift in Sources */,
 				E3128C2428EE0AAD0000AC38 /* TrailingIconLabelStyle.swift in Sources */,
 				E3C14D3C28ECAA84005146B8 /* Theme.swift in Sources */,
