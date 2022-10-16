@@ -1,8 +1,8 @@
+// Bu kisimin anlatimi Tutorial 'da atlanmis. Finished Project 'ten kopyaladim. #feedback2Apple
+
 /*
 See LICENSE folder for this sample’s licensing information.
 */
-
-// Bu kisim atlanmis. Finished Project 'ten kopyaladim. #feedback2Apple
 
 import SwiftUI
 
