@@ -15,7 +15,7 @@ struct Tutorial_Apple_ScrumDingerApp: App {
             NavigationView {
                 //MeetingView()
                 ScrumsView(scrums: $scrums) // "DailyScrum.sampleData" $scrums oldu neden? #learn
-                //ScrumsView() Bu şekilde çalışmıyor. Yukarıdaki gibi çalılamsı gerekiyor ama yukarıdaki yazımı anlayamadım. #learn
+                //ScrumsView() Bu şekilde çalışmıyor. Yukarıdaki gibi çalısamsı gerekiyor ama yukarıdaki yazımı anlayamadım. #learn
             }
             // Uygulama ilk açıldığında ekrana ilk gelmesi istenen View 'un seçildiği alan
         }

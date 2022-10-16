@@ -58,3 +58,4 @@ struct DetailEditView_Previews: PreviewProvider {
         // son kisma ".data" eklemeden evvel verdigi hata: "Cannot convert value of type 'DailyScrum' to expected argument type 'DailyScrum.Data'"
     }
 }
+

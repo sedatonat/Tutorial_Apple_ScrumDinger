@@ -5,12 +5,17 @@
 //  Created by Sedat Onat on 3.10.2022.
 //
 
+
 import SwiftUI
+import AVFoundation
 
 struct MeetingView: View {
     
     @Binding var scrum: DailyScrum // bu kisim olmadan hata verdi "Cannot find 'scrum' in scope"
     @StateObject var scrumTimer = ScrumTimer()
+    
+    private var player: AVPlayer { AVPlayer.sharedDingPlayer }
+    
     
     var body: some View {
         ZStack {
@@ -27,6 +32,10 @@ struct MeetingView: View {
         .foregroundColor(scrum.theme.accentColor)
         .onAppear {
             scrumTimer.reset(lengthInMinutes: scrum.lengthInMinutes, attendees: scrum.attendees)
+            scrumTimer.speakerChangedAction = {
+                player.seek(to: .zero)
+                player.play()
+            }
             scrumTimer.startScrum() } // ekrana gelir gelmez timer 'lari sifirla
         .onDisappear { scrumTimer.stopScrum() }
         .navigationBarTitleDisplayMode(.inline) // Bu ne ise yaradi anlamadim #learn
