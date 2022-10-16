@@ -57,7 +57,7 @@ extension DailyScrum {
         theme = data.theme
     }
 }
-    
+
 
 
 
