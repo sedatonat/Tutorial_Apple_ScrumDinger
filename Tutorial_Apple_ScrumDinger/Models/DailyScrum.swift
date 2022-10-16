@@ -56,6 +56,15 @@ extension DailyScrum {
         lengthInMinutes = Int(data.lengthInMinutes)
         theme = data.theme
     }
+    
+    // Burasi olmadigi icin ScrumsView 'a data gelmiyordu. Initialize etmek lazimmis #lessenslearned
+    init(data: Data) {
+        id = UUID()
+        title = data.title
+        attendees = data.attendees
+        lengthInMinutes = Int(data.lengthInMinutes)
+        theme = data.theme
+    }
 }
 
 
@@ -68,5 +77,5 @@ extension DailyScrum {
         DailyScrum(title: "App Dev", attendees: ["katie", "Gray", "Euna", "Luis", "Darla"], lengthInMinutes: 5, theme: .orange),
         DailyScrum(title: "Web Dev", attendees: ["Chella", "Chris", "Shristina", "Eden", "Karla", "Lindsey", "Aga", "Chad", "Jenn", "Sarah"], lengthInMinutes: 5, theme: .poppy)
     ]
-
+    
 }
