@@ -13,6 +13,7 @@ struct DailyScrum: Identifiable {
     var attendees: [Attendee] // Bir listeden seciliyor
     var lengthInMinutes: Int // Elle giriliyor
     var theme: Theme // Otomatik geliyor
+    var history: [History] = [] // Bu neden boyle? #learn
     
     // Buradaki "=UUID()" eklentisi olmadan, extension hata veriyor. Bunun neden eklendiğini anlayamadım.#learn
     // Buradaki attendees neden halen String onu da anlamadim #learn

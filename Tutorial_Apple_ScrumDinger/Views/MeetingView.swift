@@ -37,7 +37,13 @@ struct MeetingView: View {
                 player.play()
             }
             scrumTimer.startScrum() } // ekrana gelir gelmez timer 'lari sifirla
-        .onDisappear { scrumTimer.stopScrum() }
+        .onDisappear {
+            scrumTimer.stopScrum()
+            let newHistory = History(
+                attendees: scrum.attendees,
+                lengthInMinutes: scrum.timer.secondsElapsed / 60)
+            scrum.history.insert(newHistory, at:0)
+        }
         .navigationBarTitleDisplayMode(.inline) // Bu ne ise yaradi anlamadim #learn
 }
 }
