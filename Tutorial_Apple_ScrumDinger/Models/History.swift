@@ -7,7 +7,7 @@
 
 import Foundation  // Neden SwiftUI degil? #learn
 
-struct History: Identifiable {
+struct History: Identifiable, Codable {
     let id: UUID // Primary key
     let date: Date // Formati nereden giriyoruz acaba?
     var attendees: [DailyScrum.Attendee] // Varolan listeden alacak

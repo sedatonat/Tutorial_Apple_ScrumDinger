@@ -10,7 +10,7 @@
 
 import SwiftUI
 
-enum Theme: String, CaseIterable, Identifiable { // bu yeni eklenenler nedir anlamadim #learn
+enum Theme: String, CaseIterable, Identifiable, Codable { // bu yeni eklenenler nedir anlamadim #learn
     case bubblegum
     case buttercup
     case indigo

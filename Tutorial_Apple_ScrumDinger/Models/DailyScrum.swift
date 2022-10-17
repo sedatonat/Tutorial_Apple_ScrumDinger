@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct DailyScrum: Identifiable {
+struct DailyScrum: Identifiable, Codable {
     let id: UUID // AutoNumber / Primary Key gibi
     var title: String // Elle yaziliyor
     var attendees: [Attendee] // Bir listeden seciliyor
@@ -28,7 +28,7 @@ struct DailyScrum: Identifiable {
 
 // Bu primary key olarak mi dusunuluyor? #learn
 extension DailyScrum {
-    struct Attendee: Identifiable {
+    struct Attendee: Identifiable, Codable {
         let id: UUID
         var name: String
         
@@ -39,7 +39,7 @@ extension DailyScrum {
         }
     }
     
-    struct Data {
+    struct Data { // buraya neden Codable eklenmedi? #learnD
         var title: String = ""
         var attendees: [Attendee] = []
         var lengthInMinutes: Double = 5

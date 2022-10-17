@@ -51,6 +51,7 @@ struct DetailView: View {
                     HStack{
                         Image(systemName: "calendar")
                         Text(history.date, style: .date) // buradaki "style: .date" local tarih ve saati veriyor
+                        // Buraya Meeting Duration ekleyecegim #learn
                     }
                 }
             }
