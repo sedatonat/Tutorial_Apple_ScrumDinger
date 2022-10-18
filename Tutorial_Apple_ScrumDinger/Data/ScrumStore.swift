@@ -18,8 +18,40 @@ class ScrumStore: ObservableObject {
                                     appropriateFor: nil,
                                     create: false)
         .appendingPathComponent("scrum.data")
-        
     }
-    
-    
+    static func load(completion: @escaping (Result<[DailyScrum], Error>)->Void) {
+        DispatchQueue.global(qos: .background).async {
+            do { // Herhangi bir hata ile karsilasildiginda yapilacak olan islem icin kullaniliyor
+                let fileURL = try fileURL() // Local constanr
+                
+                
+                // Kullanici prpgrama ilk kez ver girdiginde cagiracagi bir veri olmadigindan dolayi hata vermesin diye asagigaki kod
+                guard let file = try? FileHandle(forReadingFrom: fileURL) else {
+                    DispatchQueue.main.async { // Uygulamanin komutlari belirli bir sira ile uygulamasini sagliyor FIFO gibi. BU olmadan ne olurdu bilemiyorum. #learn
+                        completion(.success([]))
+                    }
+                    return
+                }
+                
+                
+                // Dosyadan aldigi bilgiyi DailyScrum 'a aktariyor
+                let dailyScrum = try JSONDecoder().decode([DailyScrum].self, from: file.availableData)
+                
+                // Tutorial aciklamasi: "You perform the longer-running tasks of opening the file and decoding its contents on a background queue. When those tasks complete, you switch back to the main queue." #learn
+                DispatchQueue.main.async{
+                    completion(.success(dailyScrum))
+                }
+                
+                
+            } catch {
+                
+                // Tutorial aciklamasi: "In the catch clause, pass the error to the completion handler." #learn
+                DispatchQueue.main.async {
+                    completion(.failure(error))
+                }
+                
+                
+            }
+        }
+    }
 }
