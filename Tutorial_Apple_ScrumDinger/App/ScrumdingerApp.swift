@@ -9,15 +9,33 @@ import SwiftUI
 
 @main
 struct Tutorial_Apple_ScrumDingerApp: App {
-    @State private var scrums = DailyScrum.sampleData
+    
+    // Tutorial Note: "The @StateObject property wrapper creates a single instance of an observable object for each instance of the structure that declares it." #learn
+    @StateObject private var store = ScrumStore()
+    
     var body: some Scene {
+        
+        // Uygulama ilk açıldığında ekrana ilk gelmesi istenen View 'un seçildiği alan
         WindowGroup {
             NavigationView {
                 //MeetingView()
-                ScrumsView(scrums: $scrums) // "DailyScrum.sampleData" $scrums oldu neden? #learn
+                ScrumsView(scrums: $store.scrums) // "DailyScrum.sampleData" $scrums oldu neden? #learn
                 //ScrumsView() Bu şekilde çalışmıyor. Yukarıdaki gibi çalısamsı gerekiyor ama yukarıdaki yazımı anlayamadım. #learn
             }
-            // Uygulama ilk açıldığında ekrana ilk gelmesi istenen View 'un seçildiği alan
+            .onAppear {
+                ScrumStore.load { result in
+                    
+                    // Guncel doayalari yukle veya hata mesaji ver
+                    switch result {
+                    case .failure(let error):
+                        fatalError(error.localizedDescription)
+                    case .success(let scrums):
+                        store.scrums = scrums
+                    }
+                    
+                    
+                }
+            }
         }
     }
 }

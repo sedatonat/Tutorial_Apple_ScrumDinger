@@ -12,7 +12,7 @@ import Foundation
 import SwiftUI
 
 class ScrumStore: ObservableObject {
-    @Published var scrum: [DailyScrum]=[]
+    @Published var scrums: [DailyScrum]=[]
     
     // Dosyaya ulasmayi saglayacak fonksiyon
     private static func fileURL() throws -> URL { // verilen adresi URL 'e ceviriyor #learn
@@ -20,7 +20,7 @@ class ScrumStore: ObservableObject {
                                     in: .userDomainMask,
                                     appropriateFor: nil,
                                     create: false)
-        .appendingPathComponent("scrum.data")
+        .appendingPathComponent("scrums.data")
     }
     
     // Doayayi yukluyor
