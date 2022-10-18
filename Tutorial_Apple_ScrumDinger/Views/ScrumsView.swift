@@ -12,7 +12,7 @@ struct ScrumsView: View {
     @Environment(\.scenePhase) private var scenePhase // Inactive oldugunda kayit eder #learn
     @State private var isPresentingNewScrumView = false
     @State private var newScrumData = DailyScrum.Data()
-    let saceAction: ()->Void
+    let saveAction: ()->Void
     
     
     
@@ -67,7 +67,7 @@ struct ScrumsView: View {
             }
         }
         .onChange(of: scenePhase) { phase in
-            if phase == .inactive { saceAction() }
+            if phase == .inactive { saveAction() }
         }
     }
 }
@@ -75,7 +75,7 @@ struct ScrumsView: View {
 struct ScrumsView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            ScrumsView(scrums: .constant(DailyScrum.sampleData)) // her bir view un altina .constant neden ekleniyor? #learn
+            ScrumsView(scrums: .constant(DailyScrum.sampleData), saveAction: {}) // her bir view un altina .constant neden ekleniyor? #learn
         }
     }
 }
