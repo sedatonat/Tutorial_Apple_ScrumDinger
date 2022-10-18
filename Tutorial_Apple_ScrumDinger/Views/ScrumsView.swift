@@ -9,8 +9,10 @@ import SwiftUI
 
 struct ScrumsView: View {
     @Binding var scrums: [DailyScrum]
+    @Environment(\.scenePhase) private var scenePhase // Inactive oldugunda kayit eder #learn
     @State private var isPresentingNewScrumView = false
     @State private var newScrumData = DailyScrum.Data()
+    let saceAction: ()->Void
     
     
     
@@ -63,6 +65,9 @@ struct ScrumsView: View {
                         }
                     }
             }
+        }
+        .onChange(of: scenePhase) { phase in
+            if phase == .inactive { saceAction() }
         }
     }
 }

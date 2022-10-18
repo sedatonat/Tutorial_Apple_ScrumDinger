@@ -18,9 +18,19 @@ struct Tutorial_Apple_ScrumDingerApp: App {
         // Uygulama ilk açıldığında ekrana ilk gelmesi istenen View 'un seçildiği alan
         WindowGroup {
             NavigationView {
-                //MeetingView()
-                ScrumsView(scrums: $store.scrums) // "DailyScrum.sampleData" $scrums oldu neden? #learn
-                //ScrumsView() Bu şekilde çalışmıyor. Yukarıdaki gibi çalısamsı gerekiyor ama yukarıdaki yazımı anlayamadım. #learn
+                                
+                ScrumsView(scrums: $store.scrums) {
+                    ScrumStore.save(scrums: store.scrums) { result in
+                        
+                        // Tutorial Note: "If the call results in failure, bind the error to a local constant and stop execution." #learn
+                        if case .failure(let error) = result {
+                            fatalError(error.localizedDescription)
+                            
+                        }
+                    }
+                }
+
+                
             }
             .onAppear {
                 ScrumStore.load { result in
