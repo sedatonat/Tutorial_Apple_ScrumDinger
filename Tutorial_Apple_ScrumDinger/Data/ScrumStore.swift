@@ -5,13 +5,16 @@
 //  Created by Sedat Onat on 17.10.2022.
 //
 
+
+// Bu bolumun nasil calistigini ogren #learn
+
 import Foundation
 import SwiftUI
 
 class ScrumStore: ObservableObject {
     @Published var scrum: [DailyScrum]=[]
     
-    // User 'in verecegi lokasyona dosyayi kayit edecek
+    // Dosyaya ulasmayi saglayacak fonksiyon
     private static func fileURL() throws -> URL { // verilen adresi URL 'e ceviriyor #learn
         try FileManager.default.url(for: .documentDirectory,
                                     in: .userDomainMask,
@@ -19,6 +22,8 @@ class ScrumStore: ObservableObject {
                                     create: false)
         .appendingPathComponent("scrum.data")
     }
+    
+    // Doayayi yukluyor
     static func load(completion: @escaping (Result<[DailyScrum], Error>)->Void) {
         DispatchQueue.global(qos: .background).async {
             do { // Herhangi bir hata ile karsilasildiginda yapilacak olan islem icin kullaniliyor
@@ -54,4 +59,31 @@ class ScrumStore: ObservableObject {
             }
         }
     }
+    
+    
+    // Dosyayi kayit ediyor
+    static func save(
+        scrums: [DailyScrum],
+        completion: @escaping (Result<Int, Error>)->Void
+    ) {
+        
+        DispatchQueue.global(qos: .background).async {
+            do {
+                let data = try JSONEncoder().encode(scrums)
+                let outfile = try fileURL()
+                try data.write(to: outfile)
+                DispatchQueue.main.async {
+                    completion(.success(scrums.count))
+                }
+            } catch {
+                DispatchQueue.main.async {
+                    completion(.failure(error))
+                }
+            }
+        }
+    }
+    
+    
+    
+    
 }
