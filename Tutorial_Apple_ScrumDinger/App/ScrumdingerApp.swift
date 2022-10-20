@@ -18,18 +18,17 @@ struct Tutorial_Apple_ScrumDingerApp: App {
         // Uygulama ilk açıldığında ekrana ilk gelmesi istenen View 'un seçildiği alan
         WindowGroup {
             NavigationView {
-                                
+                
                 ScrumsView(scrums: $store.scrums) {
-                    ScrumStore.save(scrums: store.scrums) { result in
-                        
-                        // Tutorial Note: "If the call results in failure, bind the error to a local constant and stop execution." #learn
-                        if case .failure(let error) = result {
-                            fatalError(error.localizedDescription)
-                            
+                    Task {
+                        do {
+                            try await ScrumStore.save(scrums: store.scrums)
+                        } catch {
+                            fatalError("Error saving scrums.")
                         }
                     }
                 }
-
+                
                 
             }
             .onAppear {
@@ -44,6 +43,14 @@ struct Tutorial_Apple_ScrumDingerApp: App {
                     }
                     
                     
+                }
+                
+            }
+            .task {
+                do {
+                    store.scrums = try await ScrumStore.load()
+                } catch {
+                    fatalError("Error loading scrums.")
                 }
             }
         }
