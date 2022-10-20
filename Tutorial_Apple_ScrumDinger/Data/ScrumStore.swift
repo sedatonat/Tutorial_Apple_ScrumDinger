@@ -24,21 +24,41 @@ class ScrumStore: ObservableObject {
     }
     
     
-    static func load() async throws -> [DailyScrum] { // Bir parametreden sonra ayns yazmak bu parametrenin async oldugunu belirtir
-        try await withCheckedThrowingContinuation { continuation in
+    static func load() async throws -> [DailyScrum] { // Bir parametreden sonra async yazmak, bu parametrenin async oldugunu belirtir. #learn
+        
+        try await withCheckedThrowingContinuation { continuation in  // Bu kod nasil calisiyor anlamadim #learn
             // Tutorial Note: "Calling withCheckedThrowingContinuation suspends the load function, then passes a continuation into a closure that you provide. A continuation is a value that represents the code after an awaited function." Anlamadim #learn
-            load {result in
+            load { result in
+                
+                
+                // hata olursa error yolla, olmazsa scrums calistir
                 switch result {
-                case .failure(let error): // hata olursa error yolla
+                case .failure(let error):
                     continuation.resume(throwing: error)
-                case .success(let scrums): // Hata olmazsa scrums calistir
+                case .success(let scrums):
                     continuation.resume(returning: scrums)
-                    // Tutorial Note: "Add a switch statement to handle the result cases." #learn
                 }
+                
+                
             }
         }
     }
     
+    
+    // Tutorial Note: "In this section, you’ll create an async interface for the save method by wrapping a call to the existing method inside a new async version of it."
+    @discardableResult  // Tutorial Note: "The save function returns a value that callers of the function may not use. The @discardableResult attribute disables warnings about the unused return value." #learn
+    static func save(scrums: [DailyScrum]) async throws -> Int {  // static vs standrt func? #learn
+        try await withCheckedThrowingContinuation { continuation in
+            save(scrums: scrums) { result in
+                switch result {
+                case .failure (let error):
+                    continuation.resume(throwing:error)
+                case .success (let scrumsSaved):
+                    continuation.resume(returning: scrumsSaved)
+                }
+            }
+        }
+    }
     
     
     // Dosyayi yukluyor
