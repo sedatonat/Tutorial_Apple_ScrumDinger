@@ -13,6 +13,9 @@ struct Tutorial_Apple_ScrumDingerApp: App {
     // Tutorial Note: "The @StateObject property wrapper creates a single instance of an observable object for each instance of the structure that declares it." #learn
     @StateObject private var store = ScrumStore()
     
+    @State private var errorWrapper: ErrorWrapper? // "?" neden? #learn
+    // Tutorial Note: "The default value of an optional is nil. When you assign a value to this state variable, SwiftUI updates the view." Anlamadim #learn
+    
     var body: some Scene {
         
         // Uygulama ilk açıldığında ekrana ilk gelmesi istenen View 'un seçildiği alan
@@ -24,13 +27,13 @@ struct Tutorial_Apple_ScrumDingerApp: App {
                         do {
                             try await ScrumStore.save(scrums: store.scrums)
                         } catch {
-                            fatalError("Error saving scrums.")
+                            errorWrapper = ErrorWrapper(error: error, guidance: "Try again later.")
                         }
                     }
                 }
                 
                 
-            }
+            } // Report Errors Dection 'unda bu kisim nedense yok #feedback2Apple
             .onAppear {
                 ScrumStore.load { result in
                     
@@ -50,8 +53,13 @@ struct Tutorial_Apple_ScrumDingerApp: App {
                 do {
                     store.scrums = try await ScrumStore.load()
                 } catch {
-                    fatalError("Error loading scrums.")
+                    errorWrapper = ErrorWrapper(error:error, guidance: "Scrumdinger will load sample data and continue.")
                 }
+            }
+            .sheet(item: $errorWrapper, onDismiss: {
+                store.scrums = DailyScrum.sampleData
+            }) { wrapper in
+                ErrorView(errorWrapper: wrapper)
             }
         }
     }
