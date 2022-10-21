@@ -1,4 +1,4 @@
-// Apple Tutorial 'indan oldugu gibi kopyaladim. ANladigim kadari ile bunu yazmak epey uzun surecegi ve egitimin o anki seviyesindan yuksek olduhgu icin bu yola gitmisler. Ama en azindan bunu net bir sekilde belirtebilirler. AYrica onceki Section 'daki atlamalari da var. Enteresan #feedback2Apple
+// Apple Tutorial 'indan oldugu gibi kopyaladim. Anladigim kadari ile, bu kismi yazmak epey uzun surecegi ve egitimin o anki seviyesindan yuksek olduhgu icin bu yola gitmisler. Ama en azindan bunu net bir sekilde belirtebilirlerdi. Ayrica onceki Section 'daki atlamalari da var. Enteresan #feedback2Apple
 
 
 /*
