@@ -31,6 +31,18 @@ struct MeetingTimerView: View {
                 .accessibilityElement(children: .combine)
                 .foregroundStyle(theme.accentColor)
             }
+            .overlay {
+                ForEach(speakers) { speaker in
+                    if speaker.isCompleted, let index = speakers.firstIndex(where: { $0.id == speaker.id}) {
+                        // Konusmasini bitirip bitirmedigini kontrol ediyor
+                        SpeakerArc(speakerIndex: index, totalSpeakers: speakers.count)
+                            .rotation(Angle(degrees: -90)) // saat 12 pozisyonuna getiriyor
+                            .stroke(theme.mainColor, lineWidth: 12) // "The stroke modifier traces a line along the path of the shape."
+                    
+                    }
+                }
+            }
+            .padding(.horizontal)
     }
     
     
