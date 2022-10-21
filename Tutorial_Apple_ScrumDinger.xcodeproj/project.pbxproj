@@ -113,7 +113,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		E31CED5428EF50DC002A2D4F /* Views */ = {
+		E31CED5428EF50DC002A2D4F /* 4-) Interface */ = {
 			isa = PBXGroup;
 			children = (
 				E3C14D3F28ED86B8005146B8 /* CardView.swift */,
@@ -129,34 +129,57 @@
 				E3BBCFD128F79F7500E2F78B /* ThemeView.swift */,
 				E3BBCFD328F7AEC700E2F78B /* ThemePicker.swift */,
 			);
-			path = Views;
+			path = "4-) Interface";
 			sourceTree = "<group>";
 		};
-		E347967528FCDAB40052D64D /* App */ = {
+		E347967528FCDAB40052D64D /* 3-) App */ = {
 			isa = PBXGroup;
 			children = (
 				E3E2DA5F28EB60B700053698 /* ScrumdingerApp.swift */,
 			);
-			path = App;
+			path = "3-) App";
 			sourceTree = "<group>";
 		};
-		E34BA8E428FDC06500147C9F /* Data */ = {
+		E34BA8E428FDC06500147C9F /* 1-) Resource */ = {
 			isa = PBXGroup;
 			children = (
 				E34BA8E528FDC0D000147C9F /* ScrumStore.swift */,
+				E3E2DA6328EB60B800053698 /* Assets.xcassets */,
+				E37CEEA928FC1A7B00E5FCF7 /* Media */,
 			);
-			path = Data;
+			path = "1-) Resource";
 			sourceTree = "<group>";
 		};
-		E37CEEA928FC1A7B00E5FCF7 /* Resources */ = {
+		E37CEEA928FC1A7B00E5FCF7 /* Media */ = {
 			isa = PBXGroup;
 			children = (
 				E37CEEAA28FC1A7B00E5FCF7 /* ding.wav */,
 			);
-			path = Resources;
+			path = Media;
 			sourceTree = "<group>";
 		};
-		E3C14D3A28ECA4B1005146B8 /* Models */ = {
+		E39F4B05290244E30038E2A8 /* 6-) Documentation */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "6-) Documentation";
+			sourceTree = "<group>";
+		};
+		E39F4B06290245020038E2A8 /* 7-) Support */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "7-) Support";
+			sourceTree = "<group>";
+		};
+		E39F4B072902450D0038E2A8 /* 5-) Test */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "5-) Test";
+			sourceTree = "<group>";
+		};
+		E3C14D3A28ECA4B1005146B8 /* 2-) Source */ = {
 			isa = PBXGroup;
 			children = (
 				E317015528FBF57800479CF7 /* AVPlayer+Ding.swift */,
@@ -167,7 +190,7 @@
 				E3C14D3B28ECAA84005146B8 /* Theme.swift */,
 				E3128C2328EE0AAD0000AC38 /* TrailingIconLabelStyle.swift */,
 			);
-			path = Models;
+			path = "2-) Source";
 			sourceTree = "<group>";
 		};
 		E3DE145728FC146700A31900 /* a */ = {
@@ -202,12 +225,13 @@
 		E3E2DA5E28EB60B700053698 /* Tutorial_Apple_ScrumDinger */ = {
 			isa = PBXGroup;
 			children = (
-				E34BA8E428FDC06500147C9F /* Data */,
-				E347967528FCDAB40052D64D /* App */,
-				E3C14D3A28ECA4B1005146B8 /* Models */,
-				E31CED5428EF50DC002A2D4F /* Views */,
-				E3E2DA6328EB60B800053698 /* Assets.xcassets */,
-				E37CEEA928FC1A7B00E5FCF7 /* Resources */,
+				E34BA8E428FDC06500147C9F /* 1-) Resource */,
+				E3C14D3A28ECA4B1005146B8 /* 2-) Source */,
+				E347967528FCDAB40052D64D /* 3-) App */,
+				E31CED5428EF50DC002A2D4F /* 4-) Interface */,
+				E39F4B072902450D0038E2A8 /* 5-) Test */,
+				E39F4B05290244E30038E2A8 /* 6-) Documentation */,
+				E39F4B06290245020038E2A8 /* 7-) Support */,
 				E3E2DA6528EB60B800053698 /* Preview Content */,
 			);
 			path = Tutorial_Apple_ScrumDinger;
