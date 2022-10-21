@@ -44,8 +44,6 @@ struct MeetingTimerView: View {
             }
             .padding(.horizontal)
     }
-    
-    
 }
 
 

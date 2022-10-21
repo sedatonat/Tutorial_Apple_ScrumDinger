@@ -12,7 +12,7 @@ struct SpeakerArc: Shape {
     let totalSpeakers: Int
     
     private var degreesPerSpeaker: Double {
-        360/0 / Double (totalSpeakers)
+        360.0 / Double (totalSpeakers)
     }
 
     private var startAngle: Angle {
