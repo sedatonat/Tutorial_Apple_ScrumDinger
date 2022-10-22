@@ -27,7 +27,7 @@ struct MeetingView: View {
             VStack {
                 MeetingHeaderView(secondsElapsed: scrumTimer.secondsElapsed, secondsRemaining: scrumTimer.secondsRemaining, theme: scrum.theme)
                 // Circle() .strokeBorder(lineWidth:24) // bu kisim taslak olarak konumustu. Nasil bir goruntu olacagina dair. Sonra ise MeetingTimerView getirildi
-                MeetingTimerView(speakers: scrumTimer.speakers, theme: scrum.theme)
+                MeetingTimerView(speakers: scrumTimer.speakers, isRecording: isRecording, theme: scrum.theme)
                 MeetingFooterView(speakers: scrumTimer.speakers, skipAction: scrumTimer.skipSpeaker)
             }
         }

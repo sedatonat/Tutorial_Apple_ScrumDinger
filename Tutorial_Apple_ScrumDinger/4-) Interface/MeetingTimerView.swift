@@ -9,6 +9,7 @@ import SwiftUI
 
 struct MeetingTimerView: View {
     let speakers: [ScrumTimer.Speaker]
+    let isRecording: Bool
     let theme: Theme
     
     // currentSpeaker is a computed property #learn
@@ -27,6 +28,10 @@ struct MeetingTimerView: View {
                     // VStack {Text("\(ScrumTimer.Speaker)")} Bu niye olmadi? #learn
                         .font(.title)
                     Text("is speaking")
+                    Image(systemName: isRecording ? "mic" : "mic.slash") // ses kayidi yapilldigini gosteren gosterge eklendi. Burada gizli bir if var #learn
+                        .font(.title)
+                        .padding(.top)
+                        .accessibilityLabel(isRecording ? "with transription" : "without transcription") // her halukarda transcription oldugu icin herhalde bu sekilde yaziyoruz
                 }
                 .accessibilityElement(children: .combine)
                 .foregroundStyle(theme.accentColor)
@@ -35,6 +40,7 @@ struct MeetingTimerView: View {
                 ForEach(speakers) { speaker in
                     if speaker.isCompleted, let index = speakers.firstIndex(where: { $0.id == speaker.id}) {
                         // Konusmasini bitirip bitirmedigini kontrol ediyor
+                        
                         SpeakerArc(speakerIndex: index, totalSpeakers: speakers.count)
                             .rotation(Angle(degrees: -90)) // saat 12 pozisyonuna getiriyor
                             .stroke(theme.mainColor, lineWidth: 12) // "The stroke modifier traces a line along the path of the shape."
@@ -56,7 +62,8 @@ struct MeetingTimerView_Previews: PreviewProvider {
     }
     
     static var previews: some View {
-        MeetingTimerView(speakers: speakers, theme: .yellow)
+        MeetingTimerView(speakers: speakers, isRecording: true, theme: .yellow)
+        // isRecording 'e neden "true" dedik? #learn
     }
     
 }
