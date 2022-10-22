@@ -14,8 +14,11 @@ struct MeetingView: View {
     @Binding var scrum: DailyScrum // bu kisim olmadan hata verdi "Cannot find 'scrum' in scope"
     @StateObject var scrumTimer = ScrumTimer()
     
-    private var player: AVPlayer { AVPlayer.sharedDingPlayer }
+    @StateObject var speechRecognizer = SpeechRecognizer() // "The initializer requests access to the speech recognizer and microphone the first time the system calls the object."
+
+    @State private var isRecording = false // TN: "You’ll use this variable in the next section to display recording indicators." anlamadim #learn
     
+    private var player: AVPlayer { AVPlayer.sharedDingPlayer }
     
     var body: some View {
         ZStack {
@@ -36,9 +39,20 @@ struct MeetingView: View {
                 player.seek(to: .zero)
                 player.play()
             }
-            scrumTimer.startScrum() } // ekrana gelir gelmez timer 'lari sifirla
+            speechRecognizer.reset() // TN: "prepares the speech recognizer for transcription by stopping any running tasks and resetting values to their defaults."
+            speechRecognizer.transcribe() // Ses tanima modulunu baslatiyor
+            isRecording = true
+            scrumTimer.startScrum()
+    
+            
+        } // ekrana gelir gelmez timer 'lari sifirla
         .onDisappear {
             scrumTimer.stopScrum()
+            
+            speechRecognizer.stopTranscribing() // Meeting timer durdugunda ses tanimayi kapat
+            
+            isRecording = false // bu ve transcribing ' in sanki scrumTimer 'dan once olmasi lazimdi
+            
             let newHistory = History(
                 attendees: scrum.attendees,
                 lengthInMinutes: scrum.timer.secondsElapsed / 60)
